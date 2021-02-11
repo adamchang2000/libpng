@@ -60,6 +60,8 @@ elseif ("${OUTPUT}" STREQUAL "pnglibconf.c")
     message(FATAL_ERROR "Failed to generate pnglibconf.tf4")
   endif()
 
+  message(STATUS "this is awk: ${AWK}")
+
   execute_process(COMMAND "${AWK}" -f "${SRCDIR}/scripts/options.awk"
                   out=pnglibconf.tf5 pnglibconf.tf4
                   WORKING_DIRECTORY "${BINDIR}"
